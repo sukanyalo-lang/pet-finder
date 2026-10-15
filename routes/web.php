@@ -17,3 +17,19 @@ Route::get('report', function () {
 Route::get('clue', function () {
     return view('clue');
 })->name('clue');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/pets', function () {
+    return view('pets');
+})->name('pets');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('register');
+})->name('register');

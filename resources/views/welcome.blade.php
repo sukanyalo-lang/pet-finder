@@ -739,13 +739,6 @@
         <section class="container report" id="report">
             <h2>สัตว์เลี้ยงของคุณหายไปหรือไม่?</h2>
             <p>แจ้งข้อมูลสัตว์เลี้ยงที่หายไป เพื่อช่วยเพิ่มโอกาสในการตามหา</p>
-
-            <button class="main-button" id="reportButton">
-                แจ้งสัตว์เลี้ยงหาย
-            </button>
-            <a href="{{ url('/clue') }}" class="main-button">
-    แจ้งเบาะแสสัตว์เลี้ยง →
-</a>
         </section>
 
     </main>
@@ -855,16 +848,6 @@
                 );
             });
         });
-
-        // ปุ่มแจ้งสัตว์หาย (ตัวอย่าง)
-        document.getElementById('reportButton')
-            .addEventListener('click', function() {
-                alert(
-                    'ฟังก์ชันแจ้งสัตว์หายยังเป็นตัวอย่าง\n' +
-                    'ขั้นตอนต่อไปสามารถสร้างแบบฟอร์มและระบบบันทึกข้อมูลได้'
-                );
-                <a href="{{ url('/report') }}">แจ้งเบาะแส</a>
-            });
     </script>
 
 </body>
