@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>เกี่ยวกับเรา | Pet Finder</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
+        /* =========================
+           GENERAL
+        ========================= */
         * {
             margin: 0;
             padding: 0;
@@ -17,168 +22,509 @@
 
         body {
             font-family: 'IBM Plex Sans Thai', sans-serif;
-            background: #fff;
-            color: #45423D;
+            color: #45423d;
+            background: #ffffff;
             line-height: 1.7;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
         }
 
         .container {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
+            width: 86%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        nav {
-            border-bottom: 1px solid #EAE8E4;
-            padding: 18px 0;
-            background: #fff;
-        }
+        /* =========================
+           NAVBAR
+           ปรับให้เหมือนหน้าแจ้งสัตว์หาย
+        ========================= */
+        .site-header {
+            width: 100%;
+            min-height: 106px;
+            padding: 0 42px;
+            background: #ffffff;
+            border-top: 7px solid #171717;
+            border-bottom: 1px solid #e8e5e1;
 
-        .nav-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        .logo {
-            font-size: 25px;
+        .site-logo {
+            color: #493b30;
+            font-size: 30px;
             font-weight: 600;
-            letter-spacing: -1px;
+            line-height: 1.2;
             white-space: nowrap;
         }
 
-        .nav-links {
+        .site-nav {
             display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            color: #66615A;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 30px;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #AAA198;
+        .site-nav a {
+            color: #51463e;
+            font-size: 16px;
+            font-weight: 400;
+            white-space: nowrap;
+            transition: color 0.2s;
         }
 
-        .hero {
-            padding: 70px 0 45px;
-            max-width: 900px;
+        .site-nav a:hover {
+            color: #8b7968;
         }
 
-        .eyebrow {
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: #89847D;
-            margin-bottom: 14px;
+        /* =========================
+           PAGE INTRODUCTION
+        ========================= */
+        .page-header {
+            background: #ffffff;
+            text-align: center;
+            padding: 68px 20px 60px;
         }
 
-        h1 {
-            font-size: clamp(34px, 5vw, 52px);
-            line-height: 1.45;
-            font-weight: 300;
-            margin-bottom: 20px;
+        .page-label {
+            font-size: 13px;
+            color: #89847d;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
         }
 
-        h1 em {
-            font-style: normal;
-            color: #89847D;
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 400;
+            color: #51463e;
+            margin-bottom: 15px;
         }
 
-        .hero p {
+        .page-header p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #77736c;
             font-size: 15px;
-            color: #777168;
-            line-height: 2;
-            max-width: 750px;
         }
 
-        .cards {
+        /* =========================
+           ABOUT US
+        ========================= */
+        .about-section {
+            padding: 55px 0 75px;
+        }
+
+        .about-layout {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            padding: 15px 0 70px;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
         }
 
-        .card {
-            border: 1px solid #EAE8E4;
-            padding: 25px;
+        .about-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            background: #f8f6f1;
         }
 
-        .number {
-            font-size: 12px;
+        .section-label {
+            color: #89847d;
+            font-size: 13px;
             letter-spacing: 2px;
-            color: #89847D;
-            margin-bottom: 14px;
-        }
-
-        .card h2 {
-            font-size: 20px;
-            font-weight: 400;
             margin-bottom: 10px;
         }
 
-        .card p {
-            font-size: 14px;
-            color: #777168;
-            line-height: 1.9;
+        .about-content h2 {
+            color: #51463e;
+            font-size: 29px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 18px;
         }
 
-        .note {
-            background: #F7F5F1;
+        .about-content p {
+            color: #77736c;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .main-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 23px;
+            background: #71816a;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        .main-btn:hover {
+            background: #58684f;
+        }
+
+        /* =========================
+           OUR SERVICES
+        ========================= */
+        .services-section {
+            padding: 65px 0 75px;
+            background: #f8f7f3;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-heading h2 {
+            color: #51463e;
+            font-size: 29px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #77736c;
+            font-size: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 26px;
+            background: #ffffff;
+            border: 1px solid #e5e1da;
+        }
+
+        .service-number {
+            color: #71816a;
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            color: #51463e;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #77736c;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================= */
+        .contact-section {
+            padding: 75px 0;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contact-intro h2 {
+            color: #51463e;
+            font-size: 29px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .contact-intro > p {
+            color: #77736c;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-list {
+            border-top: 1px solid #e5e1da;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid #e5e1da;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f1eb;
+            color: #625548;
+            font-size: 19px;
+        }
+
+        .contact-item h3 {
+            color: #51463e;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: #77736c;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item a:hover {
+            color: #71816a;
+            text-decoration: underline;
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+        .contact-form {
             padding: 30px;
-            margin-bottom: 65px;
+            border: 1px solid #e5e1da;
+            background: #ffffff;
         }
 
-        .note h2 {
-            font-size: 24px;
-            font-weight: 400;
+        .contact-form h2 {
+            color: #51463e;
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            color: #77736c;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #514d47;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #dcd8d0;
+            background: #ffffff;
+            color: #45423d;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #71816a;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 3px;
+            background: #71816a;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #58684f;
+        }
+
+        .form-note {
+            color: #89847d;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           BOTTOM MESSAGE
+        ========================= */
+        .bottom-message {
+            background: #f8f7f3;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e5e1da;
+        }
+
+        .bottom-message h2 {
+            color: #51463e;
+            font-size: 25px;
+            font-weight: 500;
             margin-bottom: 10px;
         }
 
-        .note p {
+        .bottom-message p {
+            color: #77736c;
             font-size: 14px;
-            color: #777168;
-            line-height: 2;
+            margin-bottom: 18px;
         }
 
-        footer {
-            border-top: 1px solid #EAE8E4;
-            padding: 22px 0;
-            color: #89847D;
-            font-size: 12px;
+        /* =========================
+           FOOTER
+        ========================= */
+        .footer {
+            background: #45463f;
+            color: #ffffff;
+            padding: 30px 0;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            gap: 15px;
+            align-items: center;
+            gap: 25px;
         }
 
-        @media (max-width: 768px) {
-            .nav-content {
+        .footer .site-logo {
+            color: #ffffff;
+        }
+
+        .footer p {
+            color: #deddd6;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #deddd6;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 1000px) {
+            .site-header {
+                padding: 20px 30px;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .site-nav {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 12px 22px;
+            }
+
+            .about-layout,
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .site-header {
+                padding: 18px 20px;
+            }
+
+            .site-logo {
+                font-size: 27px;
+            }
+
+            .site-nav {
+                gap: 10px 16px;
+            }
+
+            .site-nav a {
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 45px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 29px;
+            }
+
+            .about-section,
+            .contact-section {
+                padding: 45px 0;
+            }
+
+            .services-section {
+                padding: 45px 0;
+            }
+
+            .about-image {
+                height: 230px;
+            }
+
+            .about-content h2,
+            .contact-intro h2 {
+                font-size: 25px;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+
+            .contact-form {
+                padding: 22px 18px;
+            }
+
+            .footer-content {
                 align-items: flex-start;
                 flex-direction: column;
             }
 
-            .nav-links {
-                gap: 12px;
-            }
-
-            .hero {
-                padding: 45px 0 25px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
+            .footer-links {
+                gap: 12px 18px;
             }
         }
     </style>
@@ -186,88 +532,335 @@
 
 <body>
 
-    <nav>
-        <div class="container nav-content">
-            <a href="{{ url('/') }}" class="logo">petfinder.</a>
+    <!-- NAVBAR -->
+    <header class="site-header">
 
-            <div class="nav-links">
-                <a href="{{ url('/') }}">หน้าหลัก</a>
-                <a href="{{ url('/pets') }}">สัตว์เลี้ยงที่หาย</a>
-                <a href="{{ url('/about') }}" class="active">เกี่ยวกับเรา</a>
-                <a href="{{ url('/clue') }}">แจ้งเบาะแส</a>
-                <a href="{{ url('/report') }}">แจ้งสัตว์หาย</a>
-                <a href="{{ url('/login') }}">เข้าสู่ระบบ</a>
+        <a href="{{ url('/') }}" class="site-logo">
+            petfinder.
+        </a>
+
+        <nav class="site-nav">
+            <a href="{{ url('/') }}">หน้าหลัก</a>
+            <a href="{{ url('/pets') }}">สัตว์เลี้ยงที่หาย</a>
+            <a href="{{ url('/about') }}">เกี่ยวกับเรา</a>
+            <a href="{{ url('/clue') }}">แจ้งเบาะแส</a>
+            <a href="{{ url('/report') }}">แจ้งสัตว์หาย</a>
+            <a href="{{ url('/login') }}">เข้าสู่ระบบ</a>
+        </nav>
+
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="page-label">PET FINDER / ABOUT US</div>
+
+        <h1>เกี่ยวกับเรา</h1>
+
+        <p>
+            Pet Finder เป็นเว็บไซต์ที่จัดทำขึ้นเพื่อช่วยตามหาสัตว์เลี้ยงที่สูญหาย
+            และเป็นพื้นที่สำหรับแบ่งปันข้อมูลและเบาะแสจากผู้ที่พบเห็น
+        </p>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="about-section">
+        <div class="container about-layout">
+
+            <div>
+                <img
+                    class="about-image"
+                    src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1000&q=85"
+                    alt="สุนัขและแมว"
+                >
+            </div>
+
+            <div class="about-content">
+                <div class="section-label">ABOUT PET FINDER</div>
+
+                <h2>ช่วยกันตามหา<br>เพื่อให้ได้กลับบ้าน</h2>
+
+                <p>
+                    สำหรับคนที่เลี้ยงสัตว์ สัตว์เลี้ยงเป็นส่วนหนึ่งของครอบครัว
+                    เมื่อพวกเขาหายไป เจ้าของย่อมเป็นห่วงและอยากพบให้เร็วที่สุด
+                </p>
+
+                <p>
+                    Pet Finder จึงเป็นเว็บไซต์ที่ช่วยเผยแพร่ประกาศสัตว์เลี้ยงหาย
+                    ให้ผู้คนสามารถดูข้อมูลและแจ้งเบาะแสเมื่อพบสัตว์ที่ตรงกับประกาศได้
+                </p>
+
+                <p>
+                    เราหวังว่าเว็บไซต์นี้จะช่วยให้คนในชุมชนแบ่งปันข้อมูลกันได้สะดวกขึ้น
+                    และเพิ่มโอกาสให้สัตว์เลี้ยงที่พลัดหลงได้กลับไปหาเจ้าของ
+                </p>
+
+                <a href="{{ url('/report') }}" class="main-btn">
+                    แจ้งสัตว์เลี้ยงหาย
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-label">OUR SERVICES</div>
+                <h2>เว็บไซต์ช่วยอะไรได้บ้าง?</h2>
+                <p>ฟังก์ชันที่ช่วยให้การตามหาสัตว์เลี้ยงสะดวกขึ้น</p>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-number">01</div>
+
+                    <h3>แจ้งสัตว์เลี้ยงหาย</h3>
+
+                    <p>
+                        ลงรายละเอียดสัตว์เลี้ยง เช่น ชื่อ สี สายพันธุ์
+                        รูปภาพ และบริเวณที่พบเห็นครั้งสุดท้าย
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">02</div>
+
+                    <h3>แจ้งเบาะแส</h3>
+
+                    <p>
+                        ผู้ที่พบสัตว์เลี้ยงสามารถแจ้งข้อมูลเพิ่มเติม
+                        เพื่อช่วยให้เจ้าของตรวจสอบและติดตามได้
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">03</div>
+
+                    <h3>ค้นหาประกาศ</h3>
+
+                    <p>
+                        ดูประกาศสัตว์เลี้ยงที่สูญหาย
+                        เพื่อช่วยกันสังเกตและส่งต่อข้อมูลที่เป็นประโยชน์
+                    </p>
+                </div>
+
             </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="container">
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
 
-        <section class="hero">
-            <div class="eyebrow">ABOUT PET FINDER</div>
+            <div class="contact-layout">
 
-            <h1>
-                ทุกการรอคอย<br>
-                มีความหวัง <em>ที่จะได้พบกัน</em>
-            </h1>
+                <!-- CONTACT DETAILS -->
+                <div class="contact-intro">
+
+                    <div class="section-label">CONTACT US</div>
+
+                    <h2>ติดต่อเรา</h2>
+
+                    <p>
+                        หากมีคำถาม ข้อเสนอแนะ หรือพบปัญหาการใช้งานเว็บไซต์
+                        สามารถดูข้อมูลติดต่อได้ด้านล่าง
+                    </p>
+
+                    <div class="contact-list">
+
+                        <div class="contact-item">
+                            <div class="contact-icon">☎</div>
+
+                            <div>
+                                <h3>โทรศัพท์</h3>
+                                <p>092-123-4567 (ข้อมูลตัวอย่าง)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">✉</div>
+
+                            <div>
+                                <h3>อีเมล</h3>
+                                <p>
+                                    <a href="mailto:petfinder@example.com">
+                                        petfinder@example.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">L</div>
+
+                            <div>
+                                <h3>LINE</h3>
+                                <p>@PetFinder (บัญชีตัวอย่าง)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">f</div>
+
+                            <div>
+                                <h3>Facebook</h3>
+                                <p>Pet Finder - เพื่อนสี่ขา (ชื่อเพจตัวอย่าง)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⌖</div>
+
+                            <div>
+                                <h3>ที่อยู่</h3>
+                                <p>เพิ่มที่อยู่หน่วยงานหรือสถานศึกษา</p>
+                                <p>ประเทศไทย</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">◷</div>
+
+                            <div>
+                                <h3>เวลาทำการ</h3>
+                                <p>วันจันทร์–ศุกร์ เวลา 09:00–18:00 น.</p>
+                                <p>เวลาเปิดทำการตัวอย่าง</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form">
+
+                    <h2>ส่งข้อความถึงเรา</h2>
+
+                    <p>
+                        เลือกหัวข้อและกรอกรายละเอียดที่ต้องการติดต่อ
+                    </p>
+
+                    <!-- แบบฟอร์มตัวอย่าง ยังไม่ได้เชื่อมกับ Backend -->
+                    <form id="contactForm">
+
+                        <div class="form-group">
+                            <label for="name">ชื่อผู้ติดต่อ</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="กรอกชื่อของคุณ"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">อีเมล</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="กรอกอีเมลของคุณ"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic">หัวข้อที่ต้องการติดต่อ</label>
+
+                            <select id="topic" name="topic" required>
+                                <option value="">-- เลือกหัวข้อ --</option>
+                                <option value="lost">แจ้งสัตว์เลี้ยงหาย</option>
+                                <option value="found">แจ้งพบสัตว์เลี้ยง</option>
+                                <option value="website">ปัญหาการใช้งานเว็บไซต์</option>
+                                <option value="suggestion">ข้อเสนอแนะ</option>
+                                <option value="other">อื่น ๆ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">รายละเอียด</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="พิมพ์ข้อความที่ต้องการติดต่อ"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            ส่งข้อความ
+                        </button>
+
+                        <div class="form-note">
+                            แบบฟอร์มนี้ยังไม่ได้เชื่อมต่อกับระบบรับข้อความจริง
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM MESSAGE -->
+    <section class="bottom-message">
+        <div class="container">
+
+            <h2>ช่วยกันตามหา ให้พวกเขาได้กลับบ้าน</h2>
 
             <p>
-                Pet Finder เป็นเว็บไซต์ตัวอย่างสำหรับช่วยเผยแพร่ข้อมูล
-                สัตว์เลี้ยงที่สูญหาย ให้เจ้าของและผู้คนในชุมชนช่วยกันค้นหา
-                โดยสามารถดูข้อมูลสัตว์เลี้ยง ประเภท และสถานที่ที่หาย
-                เพื่อเพิ่มโอกาสให้เพื่อนตัวน้อยได้กลับบ้านอย่างปลอดภัย
+                หากพบสัตว์เลี้ยงที่พลัดหลง สามารถช่วยแจ้งเบาะแส
+                เพื่อให้เจ้าของมีโอกาสพบสัตว์เลี้ยงอีกครั้ง
             </p>
-        </section>
 
-        <section class="cards">
+            <a href="{{ url('/clue') }}" class="main-btn">
+                ดูเบาะแสสัตว์เลี้ยง
+            </a>
 
-            <article class="card">
-                <div class="number">01 / OUR PURPOSE</div>
-                <h2>ช่วยกระจายข้อมูล</h2>
-                <p>
-                    รวบรวมข้อมูลสัตว์เลี้ยงที่หายให้ค้นหาได้สะดวก
-                    และช่วยให้ข้อมูลไปถึงผู้คนได้มากขึ้น
-                </p>
-            </article>
+        </div>
+    </section>
 
-            <article class="card">
-                <div class="number">02 / OUR COMMUNITY</div>
-                <h2>ร่วมมือกันตามหา</h2>
-                <p>
-                    เปิดพื้นที่ให้ผู้พบเห็นสามารถแจ้งเบาะแส
-                    เพื่อช่วยเจ้าของติดตามสัตว์เลี้ยงของตน
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="number">03 / OUR HOPE</div>
-                <h2>พากลับบ้านอย่างปลอดภัย</h2>
-                <p>
-                    สนับสนุนการสื่อสารข้อมูลที่ชัดเจน
-                    และการติดต่อกลับอย่างระมัดระวัง
-                </p>
-            </article>
-
-        </section>
-
-        <section class="note">
-            <h2>ร่วมเป็นส่วนหนึ่งของการช่วยเหลือ</h2>
-            <p>
-                หากพบสัตว์เลี้ยงที่ตรงกับข้อมูล โปรดแจ้งเบาะแส
-                พร้อมระบุสถานที่และเวลาที่พบเห็น และติดต่อเจ้าของ
-                ผ่านช่องทางที่ให้ไว้ ข้อมูลในเว็บไซต์นี้เป็นตัวอย่าง
-                สำหรับโครงงานและยังไม่ได้เชื่อมต่อฐานข้อมูลจริง
-            </p>
-        </section>
-
-    </main>
-
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container footer-content">
-            <span>petfinder. — ทุกการรอคอย มีความหวังที่จะได้พบกัน</span>
-            <span>เว็บไซต์ตัวอย่างสำหรับโครงงาน</span>
+
+            <div>
+                <a href="{{ url('/') }}" class="site-logo">
+                    petfinder.
+                </a>
+
+                <p>เว็บไซต์ช่วยตามหาสัตว์เลี้ยงที่สูญหาย</p>
+                <p>© {{ date('Y') }} Pet Finder</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="{{ url('/') }}">หน้าหลัก</a>
+                <a href="{{ url('/about') }}">เกี่ยวกับเรา</a>
+                <a href="{{ url('/report') }}">แจ้งสัตว์หาย</a>
+                <a href="#contact">ติดต่อเรา</a>
+            </div>
+
         </div>
     </footer>
+
+    <script>
+        // แบบฟอร์มนี้ยังไม่ส่งข้อมูลไปยังฐานข้อมูล
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            alert(
+                'แบบฟอร์มนี้ยังเป็นตัวอย่าง ' +
+                'ต้องเชื่อมต่อ Backend ก่อนจึงจะส่งข้อความได้จริง'
+            );
+        });
+    </script>
 
 </body>
 </html>
